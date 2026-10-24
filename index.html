@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Makiolki Doces · Aqui tem doce, tem amor!</title>
+<meta name="description" content="Doceria e café em Nova Caieiras. Brigadeirão, sobremesas na taça, brownie, açaí e café da manhã. Monte seu pedido e envie pelo WhatsApp.">
+<meta property="og:title" content="Makiolki Doces">
+<meta property="og:description" content="Aqui tem doce, tem amor! Doceria e café em Nova Caieiras.">
+<meta property="og:image" content="https://brennorovea-svg.github.io/Makiolki/assets/logo.png">
+<meta name="theme-color" content="#6ccfb6">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap">
+<style>
+/* Modelo A, "Vitrine": a arte do cardápio impresso virando site. Papel branco, bordas onduladas verde-água, cardápio com pontilhado e sacola ao lado */
+:root{
+  --paper:#fffdfb; --mint:#6ccfb6; --mint-soft:#e6f7f1; --rose:#f2a7a0; --rose-soft:#fdeeec;
+  --cocoa:#4a2a12; --cocoa-soft:#7a5a44; --berry:#b4565a;
+  --script:"Pacifico", "Brush Script MT", cursive; --sans:"Quicksand", "Nunito", system-ui, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--cocoa);font:500 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--berry);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance;margin:0}
+.script{font-family:var(--script);font-weight:400}
+
+/* faixa ondulada */
+.wave{height:20px;background:radial-gradient(circle at 50% 0,var(--mint) 12px,transparent 12.5px) 0 0/30px 20px repeat-x}
+.wave.up{background:radial-gradient(circle at 50% 100%,var(--mint) 12px,transparent 12.5px) 0 0/30px 20px repeat-x}
+.band{background:var(--mint);height:8px}
+
+/* topo enxuto */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rose-soft)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:54px;height:54px}
+.brand span{font-family:var(--script);font-size:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;justify-content:center;border:0;border-radius:999px;padding:12px 22px;font:700 15px/1 var(--sans);text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-rose{background:var(--berry);color:#fff;box-shadow:0 6px 0 -2px color-mix(in srgb,var(--berry) 45%,var(--cocoa))}
+.btn-line{background:transparent;color:var(--cocoa);box-shadow:inset 0 0 0 2px var(--cocoa)}
+
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-block:56px 72px}
+.pill{display:inline-flex;flex-wrap:wrap;gap:6px 10px;align-items:center;background:var(--mint-soft);border:1.5px solid var(--mint);border-radius:999px;padding:7px 16px;font-weight:700;font-size:14px}
+.pill b{color:var(--berry)}
+.hero h1{font-family:var(--script);font-weight:400;font-size:clamp(46px,7vw,86px);line-height:1.1;margin:22px 0 18px;color:var(--cocoa)}
+.hero h1 em{font-style:normal;color:var(--berry)}
+.hero p{font-size:18px;max-width:34em;color:var(--cocoa-soft);margin:0 0 28px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.phone{position:relative;justify-self:center;width:min(300px,78vw)}
+.phone .frame{border-radius:36px;padding:10px;background:var(--cocoa);box-shadow:0 30px 60px -25px color-mix(in srgb,var(--cocoa) 60%,transparent);transform:rotate(2.5deg)}
+.phone video{border-radius:28px;width:100%;aspect-ratio:9/16;object-fit:cover;background:var(--rose-soft)}
+.phone .seal{position:absolute;width:118px;left:-46px;bottom:38px;animation:spin 22s linear infinite;filter:drop-shadow(0 8px 14px rgba(74,42,18,.25))}
+.phone .heart{position:absolute;right:-18px;top:30px;font-size:34px;color:var(--rose);animation:float 3s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+/* faixa de letreiro */
+.ticker{background:var(--rose-soft);border-block:1.5px dashed var(--rose);overflow:hidden;white-space:nowrap}
+.ticker div{display:inline-block;padding-block:12px;animation:tick 38s linear infinite;font-weight:700;letter-spacing:.04em}
+.ticker span{margin:0 18px}
+.ticker i{color:var(--berry);font-style:normal}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* cardápio + sacola */
+section{scroll-margin-top:84px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px;margin-bottom:22px}
+.sec-head h2{font-family:var(--script);font-weight:400;font-size:clamp(36px,5vw,52px)}
+.sec-head p{margin:0;color:var(--cocoa-soft);max-width:30em}
+.menu-area{padding-block:72px}
+.menu-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:32px;align-items:start}
+.card{position:relative;background:#fff;border:2px solid var(--rose);border-radius:26px;padding:10px}
+.card>.inner{border:1px solid var(--cocoa);border-radius:18px;padding:26px clamp(16px,3vw,34px)}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:10px;scrollbar-width:thin}
+.tabs button{flex:none;border:1.5px solid var(--mint);background:transparent;color:var(--cocoa);border-radius:999px;padding:8px 14px;font:700 14px var(--sans);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--mint);}
+#menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:10px 40px}
+.mk-cat{min-width:0}
+.mk-cat-title{display:flex;align-items:center;justify-content:space-between;gap:10px;font-family:var(--script);font-weight:400;font-size:30px;border-bottom:2px solid var(--rose);padding:18px 0 6px;margin-bottom:6px}
+.mk-cat-title span:first-child::after{content:" ♥";color:var(--rose);font-size:20px}
+.mk-tag{font:700 12px var(--sans);background:var(--mint);border-radius:999px;padding:4px 10px;letter-spacing:.03em}
+.mk-items{list-style:none;margin:0;padding:0}
+.mk-item{display:grid;grid-template-columns:auto 1fr auto auto;gap:4px 8px;align-items:baseline;padding:9px 4px;border-radius:12px;transition:background .2s}
+.mk-item.mk-on{background:var(--mint-soft)}
+.mk-info{display:flex;flex-direction:column;min-width:0}
+.mk-name{font-weight:600}
+.mk-desc{font-size:13px;color:var(--cocoa-soft);font-weight:500;line-height:1.4;margin-top:2px}
+.mk-dots{border-bottom:2px dotted var(--mint);transform:translateY(-4px);min-width:12px}
+.mk-price{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.mk-qty{display:flex;align-items:center;gap:2px;align-self:center}
+.mk-qty button{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--rose);background:#fff;color:var(--cocoa);font:700 16px/1 var(--sans);cursor:pointer}
+.mk-qty .mk-plus{background:var(--rose);border-color:var(--rose)}
+.mk-qty output{min-width:18px;text-align:center;font-weight:700;font-size:14px}
+.mk-item:not(.mk-on) .mk-minus,.mk-item:not(.mk-on) output{visibility:hidden}
+.mk-bump{animation:bump .3s}
+@keyframes bump{40%{transform:scale(1.025)}}
+.mk-soon{margin-top:10px;background:var(--rose-soft);border:1.5px dashed var(--rose);border-radius:16px;padding:12px 14px}
+.mk-soon p{margin:8px 0 0;font-size:14px}
+
+.bag{position:sticky;top:96px;background:var(--mint-soft);border-radius:26px;padding:24px}
+.bag h3{font-family:var(--script);font-weight:400;font-size:32px}
+.bag .muted{font-size:14px;color:var(--cocoa-soft);margin:4px 0 14px}
+#mk-summary{list-style:none;margin:0 0 12px;padding:0;font-size:14px;display:grid;gap:6px}
+#mk-summary li{display:flex;justify-content:space-between;gap:10px}
+#mk-summary li span:last-child{font-weight:700;font-variant-numeric:tabular-nums}
+.mk-empty{color:var(--cocoa-soft)}
+.total{display:flex;justify-content:space-between;align-items:baseline;border-top:2px dotted var(--mint);padding-top:10px;margin-bottom:14px;font-weight:700}
+.total strong{font-size:22px}
+.field{display:grid;gap:4px;margin-bottom:10px;font-size:13px;font-weight:700}
+.field input,.field select,.field textarea{font:500 15px var(--sans);color:var(--cocoa);background:#fff;border:1.5px solid var(--mint);border-radius:12px;padding:10px 12px;width:100%}
+.field textarea{resize:vertical;min-height:58px}
+#mk-send{width:100%;margin-top:6px}
+.mk-disabled{opacity:.55}
+.fine{font-size:12px;color:var(--cocoa-soft);margin:10px 0 0;text-align:center}
+
+/* nossa casa */
+.casa{background:var(--rose-soft);padding-block:0}
+.casa .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center;padding-block:64px}
+.casa-media{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.casa-media video{grid-row:span 2;border-radius:22px;width:100%;aspect-ratio:9/16;object-fit:cover;border:6px solid #fff}
+.casa-media img{border-radius:22px;border:6px solid #fff;width:100%;aspect-ratio:1;object-fit:cover}
+.info{display:grid;gap:14px;margin-top:20px}
+.info div{background:#fff;border-radius:18px;padding:14px 18px}
+.info b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--berry)}
+
+/* instagram */
+.insta{padding-block:56px}
+.insta a{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:18px;background:var(--mint);border-radius:26px;padding:26px;text-decoration:none}
+.insta .ico{width:60px;height:60px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.insta small{display:block;letter-spacing:.2em;font-weight:700;font-size:12px}
+.insta strong{font-family:var(--script);font-weight:400;font-size:clamp(28px,4vw,40px)}
+footer{text-align:center;padding-block:10px 30px}
+footer p{font-family:var(--script);font-size:20px;margin:0 0 6px}
+footer small{color:var(--cocoa-soft)}
+
+/* barra flutuante no celular */
+#mk-bar{position:fixed;left:max(12px,env(safe-area-inset-left,0px));right:max(12px,env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:30;display:none;justify-content:space-between;align-items:center;gap:10px;background:var(--cocoa);color:#fff;border-radius:999px;padding:14px 22px;text-decoration:none;font-weight:700;transform:translateY(140%);transition:transform .3s}
+#mk-bar.mk-show{transform:none}
+
+@media (max-width:900px){
+  .hero .wrap,.casa .wrap{grid-template-columns:minmax(0,1fr)}
+  .menu-grid{grid-template-columns:minmax(0,1fr)}
+  .bag{position:static}
+  #mk-bar{display:flex}
+  .phone .seal{left:-24px;width:96px}
+}
+@media (max-width:640px){
+  #menu{grid-template-columns:1fr}
+  .brand span{display:none}
+  .hero .wrap{padding-block:32px 52px}
+  .mk-item{grid-template-columns:1fr auto auto}
+  .mk-dots{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="band"></div><div class="wave"></div>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#topo"><img src="assets/logo.png" alt="Makiolki Doces"><span>Makiolki Doces</span></a>
+    <a class="btn btn-rose" href="#cardapio">Fazer pedido</a>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="pill">Inauguração <b>sábado, 24/10</b> das 9h às 19h</span>
+        <h1>Aqui tem doce, <em>tem amor!</em></h1>
+        <p>Brigadeirão, sobremesas na taça, brownie, açaí e agora café da manhã, tudo feito com ingredientes de qualidade em Nova Caieiras. Monte seu pedido aqui e ele chega pronto no nosso WhatsApp.</p>
+        <div class="ctas">
+          <a class="btn btn-rose" href="#cardapio">Ver cardápio e pedir</a>
+          <a class="btn btn-line" data-mk="whats" href="#">Chamar no WhatsApp</a>
+        </div>
+      </div>
+      <div class="phone">
+        <div class="frame"><video src="assets/inauguracao.mp4" poster="assets/inauguracao.jpg" autoplay muted loop playsinline></video></div>
+        <img class="seal" src="assets/logo.png" alt="">
+        <span class="heart" aria-hidden="true">♥</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true"><div>
+    <span>Brigadeirão de Morango</span><i>♥</i><span>Banoffee na taça</span><i>♥</i><span>Cookie de Nutella</span><i>♥</i><span>Açaí 400ml</span><i>♥</i><span>Folhata Italiana</span><i>♥</i><span>Café da manhã</span><i>♥</i><span>Brownie com sorvete</span><i>♥</i>
+    <span>Brigadeirão de Morango</span><i>♥</i><span>Banoffee na taça</span><i>♥</i><span>Cookie de Nutella</span><i>♥</i><span>Açaí 400ml</span><i>♥</i><span>Folhata Italiana</span><i>♥</i><span>Café da manhã</span><i>♥</i><span>Brownie com sorvete</span><i>♥</i>
+  </div></div>
+
+  <section class="menu-area" id="cardapio">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Nosso cardápio</h2>
+        <p>Toque no + para colocar na sacola. No fim, o pedido abre no WhatsApp com tudo escrito.</p>
+      </div>
+      <div class="menu-grid">
+        <div class="card"><div class="inner">
+          <div class="tabs" role="tablist" id="tabs" aria-label="Categorias"></div>
+          <div id="menu"></div>
+        </div></div>
+        <aside class="bag" id="pedido">
+          <h3>Sua sacola</h3>
+          <p class="muted"><span data-mk="count">0 itens</span></p>
+          <ul id="mk-summary"></ul>
+          <div class="total"><span>Total</span><strong data-mk="total">R$ 0,00</strong></div>
+          <form id="mk-form">
+            <label class="field" for="mk-nome">Seu nome<input id="mk-nome" autocomplete="name" placeholder="Como te chamamos?"></label>
+            <label class="field" for="mk-modo">Como prefere
+              <select id="mk-modo"><option>Vou retirar na loja</option><option>Quero combinar a entrega</option></select>
+            </label>
+            <label class="field" for="mk-quando">Dia e horário<input id="mk-quando" placeholder="Ex.: sábado às 15h"></label>
+            <label class="field" for="mk-obs">Observação<textarea id="mk-obs" placeholder="Algum recado pra gente?"></textarea></label>
+            <a class="btn btn-rose" id="mk-send" href="#">Enviar pedido no WhatsApp</a>
+            <p class="fine">O pagamento e a confirmação são feitos na conversa.</p>
+          </form>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="casa" id="casa">
+    <div class="wave"></div>
+    <div class="wrap">
+      <div>
+        <h2 class="script" style="font-size:clamp(36px,5vw,52px)">Vem tomar um café com a gente</h2>
+        <p style="color:var(--cocoa-soft);max-width:32em">Um cantinho cheio de flores, neon rosa e vitrine de doces. Para comer na hora, levar pra casa ou começar o dia com café da manhã.</p>
+        <div class="info">
+          <div><b>Endereço</b>Rua João Mazivieiro, 121, Nova Caieiras<br><small>Ao lado do Buffet Ortega</small></div>
+          <div><b>Inauguração</b>Sábado, 24/10, das 9h às 19h</div>
+        </div>
+      </div>
+      <div class="casa-media">
+        <video src="assets/tour.mp4" poster="assets/tour.jpg" autoplay muted loop playsinline aria-label="Tour pela loja"></video>
+        <img src="assets/neon.jpg" alt="Neon rosa: A vida é doce com Makiolki">
+        <img src="assets/love.jpg" alt="Luminária com a palavra Love e flores">
+      </div>
+    </div>
+    <div class="wave up" style="background-color:var(--paper)"></div>
+  </section>
+
+  <section class="insta">
+    <div class="wrap">
+      <a data-mk="insta" href="#">
+        <span class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span>
+        <span><small>SIGA A GENTE NO INSTAGRAM</small><strong>@makiolki_doces</strong></span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>♥ Feito com ingredientes de qualidade e muito amor! ♥</p>
+  <small>Makiolki Doces · Nova Caieiras</small>
+</footer>
+<div class="wave up"></div><div class="band"></div>
+
+<a id="mk-bar" href="#pedido"><span><span data-mk="count">0 itens</span> · <span data-mk="total">R$ 0,00</span></span><span>Ver sacola →</span></a>
+
+<script src="shared.js"></script>
+<script>
+  MK.renderMenu(document.getElementById('menu'));
+  MK.renderTabs(document.getElementById('tabs'), document.getElementById('menu'));
+  MK.init();
+</script>
+</body>
+</html>
