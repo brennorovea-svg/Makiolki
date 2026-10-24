@@ -2,7 +2,7 @@
 
 Site da Makiolki Doces ("Aqui tem doce, tem amor!"), doceria e café em Nova Caieiras.
 
-Site estático (HTML, CSS e JS), publicado pelo GitHub Pages.
+Site estático (HTML, CSS e JS), publicado pelo GitHub Pages em https://www.makiolki.com.br.
 
 - `index.html`: a página (modelo "Vitrine").
 - `shared.js`: cardápio com preços e a sacola que abre o WhatsApp com o pedido pronto. Para mudar um preço ou item, edite a lista `MENU` neste arquivo.
