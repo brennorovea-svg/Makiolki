@@ -12,7 +12,7 @@
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee+Inline&text=NEOSCRIPT%20&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee+Inline&text=NESCRIPT&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&text=SITEFOPRU%20&display=swap">
 <style>
 /* Modelo A, "Vitrine": a arte do cardápio impresso virando site. Papel branco, bordas onduladas verde-água, cardápio com pontilhado e sacola ao lado */
@@ -143,17 +143,26 @@ footer p{font-family:var(--script);font-size:20px;margin:0 0 6px}
 footer small{color:var(--cocoa-soft)}
 /* crédito no estilo da Neon Scripts: placa escura com letreiro neon */
 .neon-credit{--ns-bg:#07041A;--ns-pink:#FF2E9A;--ns-tube:#FFB8DC;--ns-blue:#2E8CFF;--ns-cyan:#40E6DC;--ns-muted:#B2A7D4;--ns-ease:cubic-bezier(.22,1,.36,1);
-  display:inline-flex;align-items:center;gap:12px;margin-top:18px;padding:10px 18px 10px 10px;border-radius:14px;background:var(--ns-bg);border:2px solid var(--ns-pink);text-decoration:none;
+  display:inline-flex;align-items:center;gap:12px;margin-top:18px;padding:10px 18px;border-radius:14px;background:var(--ns-bg);border:2px solid var(--ns-pink);text-decoration:none;
   box-shadow:0 0 12px rgba(255,46,154,.45),inset 0 0 10px rgba(255,46,154,.25);transition:transform .18s var(--ns-ease),box-shadow .18s var(--ns-ease)}
 .neon-credit:hover{transform:translateY(-2px);box-shadow:0 0 26px rgba(255,46,154,.7),inset 0 0 14px rgba(255,46,154,.35)}
 .neon-credit:active{transform:scale(.97);transition-duration:.1s}
 .neon-credit:focus-visible{outline:2px solid var(--ns-bg);outline-offset:3px}
-.neon-credit svg{width:34px;height:34px;flex:none}
-.neon-credit .ns-txt{display:flex;flex-direction:column;align-items:flex-start;gap:3px;line-height:1}
 .neon-credit .ns-by{font:700 9px "Space Mono",ui-monospace,monospace;letter-spacing:.2em;color:var(--ns-muted)}
-.neon-credit .ns-name{font:400 19px "Bungee Inline","Bungee",system-ui,sans-serif;letter-spacing:.02em;color:var(--ns-tube);
+/* Logo v3 (2026-10-28): NEON em cima, SCRIPTS bem menor embaixo na cor oposta; E ao contrário e o O vira olho */
+.neon-credit .ns-logo{display:inline-flex;flex-direction:column;align-items:center;line-height:1}
+.neon-credit .ns-name{display:inline-flex;align-items:center;font:400 22px "Bungee Inline","Bungee",system-ui,sans-serif;letter-spacing:.02em;color:var(--ns-tube);
   text-shadow:0 0 6px var(--ns-pink),0 0 16px var(--ns-pink),0 0 36px rgba(255,46,154,.6)}
-.neon-credit .ns-name b{font-weight:400;color:#B0DCFF;text-shadow:0 0 6px var(--ns-blue),0 0 16px var(--ns-cyan),0 0 36px rgba(46,140,255,.6)}
+.neon-credit .ns-sub{font:400 7.8px "Bungee Inline","Bungee",system-ui,sans-serif;letter-spacing:.08em;margin-top:3px;color:#B0DCFF;text-shadow:0 0 4px var(--ns-blue),0 0 12px var(--ns-cyan)}
+.neon-credit .ns-espelho{display:inline-block;transform:scaleX(-1)}
+.neon-credit .ns-olho{display:inline-flex;align-items:center;width:.86em;height:1em;margin:0 .02em}
+.neon-credit .ns-olho svg{display:block;width:100%;height:.86em;overflow:visible;filter:drop-shadow(0 0 3px var(--ns-pink)) drop-shadow(0 0 9px var(--ns-pink))}
+.neon-credit .ns-tubo{fill:none;stroke:var(--ns-tube);stroke-width:13;stroke-linejoin:round}
+.neon-credit .ns-iris{fill:none;stroke:#B0DCFF;stroke-width:5.5}
+.neon-credit .ns-pupila{fill:#B0DCFF}
+.neon-credit .ns-palpebra{transform-box:fill-box;transform-origin:center;transition:transform 140ms var(--ns-ease)}
+.neon-credit.fecha .ns-palpebra{transform:scaleY(.06);transition-duration:110ms}
+@media (prefers-reduced-motion:reduce){.neon-credit,.neon-credit .ns-palpebra{transition:none}.neon-credit:hover .ns-name{animation:none}}
 .neon-credit:hover .ns-name{animation:ns-flicker .7s steps(1) 1}
 @keyframes ns-flicker{0%,100%{opacity:1}12%{opacity:.35}20%{opacity:1}34%{opacity:.55}42%{opacity:1}}
 
@@ -277,14 +286,20 @@ footer small{color:var(--cocoa-soft)}
   <p>♥ Feito com ingredientes de qualidade e muito amor! ♥</p>
   <small>Makiolki Doces · Nova Caieiras</small>
   <div><a class="neon-credit" href="https://neonscripts.com.br/" target="_blank" rel="noopener" aria-label="Site feito por Neon Scripts">
-    <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#07041A"/><rect x="7" y="7" width="50" height="50" rx="10" fill="none" stroke="#FF2E9A" stroke-width="4"/><path d="M22 44V20l20 24V20" fill="none" stroke="#FFB8DC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    <span class="ns-txt"><span class="ns-by">SITE FEITO POR</span><span class="ns-name">NEON <b>SCRIPTS</b></span></span>
+    <span class="ns-by" aria-hidden="true">SITE FEITO POR</span>
+    <span class="ns-logo" aria-hidden="true"><span class="ns-name">N<span class="ns-espelho">E</span><span class="ns-olho"><svg viewBox="0 0 100 100"><g class="ns-palpebra"><path class="ns-tubo" d="M4 50 Q50 -2 96 50 Q50 102 4 50 Z"/><circle class="ns-iris" cx="50" cy="50" r="15"/><circle class="ns-pupila" cx="50" cy="50" r="6.5"/></g></svg></span>N</span><span class="ns-sub">SCRIPTS</span></span>
   </a></div>
 </footer>
 <div class="wave up"></div><div class="band"></div>
 
 <a id="mk-bar" href="#pedido"><span><span data-mk="count">0 itens</span> · <span data-mk="total">R$ 0,00</span></span><span>Ver sacola →</span></a>
 
+<script>
+  // Olho da Neon Scripts no rodapé: pisca de vez em quando, só com o crédito na tela
+  (function(){var c=document.querySelector('.neon-credit');if(!c||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var v=false;new IntersectionObserver(function(e){v=e[0].isIntersecting}).observe(c);
+  setInterval(function(){if(!v||document.hidden||Math.random()>.45)return;c.classList.add('fecha');setTimeout(function(){c.classList.remove('fecha')},150)},2600);})();
+</script>
 <script src="shared.js"></script>
 <script>
   MK.renderMenu(document.getElementById('menu'));
