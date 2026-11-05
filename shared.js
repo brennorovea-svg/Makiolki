@@ -5,47 +5,57 @@
 
   var MENU = [
     { id: 'doces', cat: 'Doces', items: [
-      ['cookie', 'Cookie de Nutella', 10],
-      ['brig4', 'Caixa de Brigadeiro', 12, '4 unidades'],
-      ['bmor', 'Brigadeirão de Morango', 17],
-      ['bninho', 'Brigadeirão Ninho com Morango', 17],
-      ['bferr', 'Brigadeirão Ferrero com Morango', 17],
-      ['bolo', 'Fatia de Bolo', 17]
+      ['cookie', 'Cookie', 12],
+      ['minitorta', 'Mini torta', 14],
+      ['brig4', 'Caixa de Brigadeiro', 12],
+      ['brigadeirao', 'Brigadeirão', 15],
+      ['bmor', 'Brigadeirão com morango', 17, 'Sabores: Tradicional, Ninho ou Ferrero'],
+      ['bolo', 'Fatia de bolo', 17]
     ]},
     { id: 'taca', cat: 'Sobremesas na taça', tag: '250ml', items: [
-      ['banoffee', 'Banoffee', 22, 'Farofa artesanal de bolacha, doce de leite caseiro suave, chantilly e canela.'],
-      ['morangoffee', 'Morangoffee', 25, 'Farofa artesanal de bolacha, brigadeiro branco, morangos frescos, suspiro e chantilly.'],
-      ['frutas', 'Makiolki Frutas vermelhas', 30, 'Creme de Ninho, geleia artesanal de frutas vermelhas, brigadeiro branco e chantilly.'],
-      ['folhata', 'Folhata Italiana de Morango', 38, 'Creme 4 leites, brigadeiro branco, morango e folhata italiana.']
+      ['banoffee', 'Banoffee', 22, 'Farofa artesanal, doce de leite caseiro suave, banana, chantilly e canela.'],
+      ['morangoffee', 'Morangoffee', 24, 'Farofa artesanal, brigadeiro branco, morango, suspiro e chantilly.'],
+      ['frutas', 'Makiolki Frutas vermelhas', 26, 'Creme de Ninho, geleia artesanal de frutas vermelhas, brigadeiro branco e chantilly.'],
+      ['folhata', 'Folhata Italiana de Morango', 28, 'Creme 4 leites, morango, folhata italiana e brigadeiro branco.'],
+      ['chocolatuda', 'Makiolki Chocolatuda', 28, 'Mousse de chocolate, brownie, brigadeiro e morango.']
+    ]},
+    { id: 'sorvete', cat: 'Sorvete na taça', tag: '250ml', items: [
+      ['brsupreme', 'Brownie Supreme', 26, '2 bolas de sorvete (consultar sabores disponíveis), brownie, cobertura de chocolate, brigadeiro e granulado belga.'],
+      ['banogelada', 'Banoffee Gelada', 26, 'Sorvete de creme, banana, doce de leite caseiro, farofa crocante, chantilly e canela.'],
+      ['ninhonut', 'Makiolki Ninho com Nutella', 28, 'Creme de Ninho, sorvete de creme, Nutella e morango.']
     ]},
     { id: 'brownie', cat: 'Brownie', items: [
+      ['brsimples', 'Fatia de brownie simples', 14],
       ['brnut', 'Fatia de brownie com Nutella', 16],
-      ['brsorv', 'Fatia de brownie com sorvete', 25]
+      ['brsorv', 'Fatia de brownie com sorvete', 22, 'Brownie, sorvete, cobertura de chocolate e um morango.']
     ]},
-    { id: 'acai', cat: 'Açaí', tag: '400ml', items: [
-      ['acai', 'Açaí', 19],
-      ['acaiban', 'Açaí com banana', 20],
-      ['acaigra', 'Açaí com granola', 22]
+    { id: 'acai', cat: 'Açaí', items: [
+      ['acai', 'Açaí simples', 18],
+      ['acaifrutas', 'Açaí com duas frutas + granola', 22]
     ]},
-    { id: 'salgados', cat: 'Salgados', items: [
-      ['esfiha', 'Mini esfiha', 10, '4 unidades'],
-      ['pdq', 'Pão de queijo', 7],
-      ['croiss', 'Mini croissant', 12.9, '3 unidades'],
-      ['minisal', 'Mini salgados', 10.5, '4 unidades']
-    ]},
-    { id: 'lanches', cat: 'Lanches', items: [
-      ['paoman', 'Pão com manteiga', 5.5],
-      ['paoreq', 'Pão com requeijão', 5.5],
-      ['misto', 'Misto quente', 16]
+    { id: 'lanches', cat: 'Lanches e Salgados', items: [
+      ['paoman', 'Pão com manteiga', 6],
+      ['paoreq', 'Pão com requeijão', 6],
+      ['pdq', 'Pão de queijo', 8],
+      ['torrada', 'Torrada', 12, 'Opções: requeijão ou geleia de frutas vermelhas'],
+      ['croiss', 'Mini croissant (3 unidades)', 14, 'Sabores: queijo, presunto, requeijão ou Nutella'],
+      ['queijoq', 'Queijo quente', 14],
+      ['misto', 'Misto quente', 14],
+      ['bauru', 'Bauru', 16],
+      ['esfiha', 'Mini esfiha (4 unidades)', 16],
+      ['coxinha', 'Mini coxinha (4 unidades)', 16],
+      ['brioche', 'Brioche Supreme', 24, 'Pão de brioche caseiro, recheado com mussarela, presunto, requeijão cremoso e um toque especial de mostarda Dijon.']
     ]},
     { id: 'bebidas', cat: 'Bebidas', items: [
-      ['agua', 'Água', 7], ['aguagas', 'Água com gás', 7], ['h2o', 'H2O', 10],
-      ['refri', 'Refrigerante', 8], ['soda', 'Soda Italiana', 16],
-      ['coado', 'Café coado (P)', 5], ['expresso', 'Café expresso', 15],
-      ['suco', 'Suco de Laranja', 13], ['cha', 'Chá quente', 7]
+      ['coco', 'Água de coco', 5], ['agua', 'Água', 7], ['aguagas', 'Água com gás', 7], ['cha', 'Chá', 7],
+      ['refri', 'Refrigerante lata 350ml', 8],
+      ['coadop', 'Café coado pequeno', 5], ['coadog', 'Café coado grande', 8], ['coadoleite', 'Café coado com leite', 8],
+      ['expresso', 'Café expresso', 15, 'Acompanha água com gás e bolacha.'],
+      ['h2o', 'H2O', 10], ['suco', 'Suco de laranja', 12], ['uva', 'Suco de uva integral Aurora', 12],
+      ['soda', 'Soda Italiana', 14], ['vitamina', 'Vitamina', 14]
     ]}
   ];
-  var SOON = ['Ciabatta de queijo e cogumelo', 'Ciabatta de salame, queijo e rúcula', 'Ciabatta de salpicão', 'Croissant'];
+  var SOON = ['Ciabatta de queijo e cogumelo', 'Ciabatta de salame, queijo e rúcula', 'Ciabatta de salpicão'];
 
   var byId = {};
   MENU.forEach(function (c) { c.items.forEach(function (i) { byId[i[0]] = { name: i[1], price: i[2], cat: c.cat }; }); });
