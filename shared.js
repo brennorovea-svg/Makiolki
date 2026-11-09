@@ -6,8 +6,8 @@
   var MENU = [
     { id: 'doces', cat: 'Doces', items: [
       ['cookie', 'Cookie', 12],
-      ['minitorta', 'Mini torta', 14],
       ['brig4', 'Caixa de Brigadeiro', 12],
+      ['minitorta', 'Mini torta', 14],
       ['brigadeirao', 'Brigadeirão', 15],
       ['bmor', 'Brigadeirão com morango', 17, 'Sabores: Tradicional, Ninho ou Ferrero'],
       ['bolo', 'Fatia de bolo', 17]
@@ -17,12 +17,13 @@
       ['morangoffee', 'Morangoffee', 24, 'Farofa artesanal, brigadeiro branco, morango, suspiro e chantilly.'],
       ['frutas', 'Makiolki Frutas vermelhas', 26, 'Creme de Ninho, geleia artesanal de frutas vermelhas, brigadeiro branco e chantilly.'],
       ['folhata', 'Folhata Italiana de Morango', 28, 'Creme 4 leites, morango, folhata italiana e brigadeiro branco.'],
-      ['chocolatuda', 'Makiolki Chocolatuda', 28, 'Mousse de chocolate, brownie, brigadeiro e morango.']
+      ['chocolatuda', 'Makiolki Chocolatuda', 28, 'Mousse de chocolate, brownie, brigadeiro e morango.'],
+      ['ninhonuttaca', 'Makiolki Ninho com Nutella', 28, 'Mousse de Ninho, Nutella, brigadeiro de Ninho, pedaços de brownie e morango.']
     ]},
     { id: 'sorvete', cat: 'Sorvete na taça', tag: '250ml', items: [
       ['brsupreme', 'Brownie Supreme', 26, '2 bolas de sorvete (consultar sabores disponíveis), brownie, cobertura de chocolate, brigadeiro e granulado belga.'],
       ['banogelada', 'Banoffee Gelada', 26, 'Sorvete de creme, banana, doce de leite caseiro, farofa crocante, chantilly e canela.'],
-      ['ninhonut', 'Makiolki Ninho com Nutella', 28, 'Creme de Ninho, sorvete de creme, Nutella e morango.']
+      ['ninhonut', 'Supreme Ninho com Nutella', 28, 'Creme de Ninho, sorvete de creme, Nutella e morango.']
     ]},
     { id: 'brownie', cat: 'Brownie', items: [
       ['brsimples', 'Fatia de brownie simples', 14],
@@ -41,6 +42,7 @@
       ['croiss', 'Mini croissant (3 unidades)', 14, 'Sabores: queijo, presunto, requeijão ou Nutella'],
       ['queijoq', 'Queijo quente', 14],
       ['misto', 'Misto quente', 14],
+      ['tortafatia', 'Fatia de torta', 15],
       ['bauru', 'Bauru', 16],
       ['esfiha', 'Mini esfiha (4 unidades)', 16],
       ['coxinha', 'Mini coxinha (4 unidades)', 16],
@@ -49,7 +51,7 @@
     { id: 'bebidas', cat: 'Bebidas', items: [
       ['coco', 'Água de coco', 5], ['agua', 'Água', 7], ['aguagas', 'Água com gás', 7], ['cha', 'Chá', 7],
       ['refri', 'Refrigerante lata 350ml', 8],
-      ['coadop', 'Café coado pequeno', 5], ['coadog', 'Café coado grande', 8], ['coadoleite', 'Café coado com leite', 8],
+      ['coadop', 'Café coado pequeno', 5], ['coadog', 'Café coado grande', 8], ['coadoleite', 'Café coado com leite', 8], ['choco', 'Chocolate quente', 8],
       ['expresso', 'Café expresso', 15, 'Acompanha água com gás e bolacha.'],
       ['h2o', 'H2O', 10], ['suco', 'Suco de laranja', 12], ['uva', 'Suco de uva integral Aurora', 12],
       ['soda', 'Soda Italiana', 14], ['vitamina', 'Vitamina', 14]
@@ -58,7 +60,8 @@
   var SOON = ['Ciabatta de queijo e cogumelo', 'Ciabatta de salame, queijo e rúcula', 'Ciabatta de salpicão'];
 
   var byId = {};
-  MENU.forEach(function (c) { c.items.forEach(function (i) { byId[i[0]] = { name: i[1], price: i[2], cat: c.cat }; }); });
+  var dup = {}, seen = {};
+  MENU.forEach(function (c) { c.items.forEach(function (i) { byId[i[0]] = { name: i[1], price: i[2], cat: c.cat }; if (seen[i[1]]) dup[i[1]] = 1; seen[i[1]] = 1; }); });
 
   var cart = {};
   function fmt(v) { return 'R$ ' + v.toFixed(2).replace('.', ','); }
@@ -73,7 +76,7 @@
 
   function message() {
     var lines = ['Olá, Makiolki! Quero fazer um pedido pelo site:', ''];
-    for (var k in cart) lines.push('• ' + cart[k] + 'x ' + byId[k].name + ' (' + fmt(cart[k] * byId[k].price) + ')');
+    for (var k in cart) lines.push('• ' + cart[k] + 'x ' + byId[k].name + (dup[byId[k].name] ? ' - ' + byId[k].cat : '') + ' (' + fmt(cart[k] * byId[k].price) + ')');
     lines.push('', 'Total: ' + fmt(total()));
     var nome = val('mk-nome'), modo = val('mk-modo'), quando = val('mk-quando'), obs = val('mk-obs');
     if (nome) lines.push('Nome: ' + nome);
