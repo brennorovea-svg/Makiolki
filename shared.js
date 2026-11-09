@@ -23,7 +23,7 @@
     { id: 'sorvete', cat: 'Sorvete na taça', tag: '250ml', items: [
       ['brsupreme', 'Brownie Supreme', 26, '2 bolas de sorvete (consultar sabores disponíveis), brownie, cobertura de chocolate, brigadeiro e granulado belga.'],
       ['banogelada', 'Banoffee Gelada', 26, 'Sorvete de creme, banana, doce de leite caseiro, farofa crocante, chantilly e canela.'],
-      ['ninhonut', 'Makiolki Ninho com Nutella', 28, 'Creme de Ninho, sorvete de creme, Nutella e morango.']
+      ['ninhonut', 'Supreme Ninho com Nutella', 28, 'Creme de Ninho, sorvete de creme, Nutella e morango.']
     ]},
     { id: 'brownie', cat: 'Brownie', items: [
       ['brsimples', 'Fatia de brownie simples', 14],
