@@ -10,7 +10,8 @@
       ['minitorta', 'Mini torta', 14],
       ['brigadeirao', 'Brigadeirão', 15],
       ['bmor', 'Brigadeirão com morango', 17, 'Sabores: Tradicional, Ninho ou Ferrero'],
-      ['bolo', 'Fatia de bolo', 17]
+      ['bolo', 'Fatia de bolo tradicional', 17],
+      ['boloesp', 'Fatia de bolo especial', 19]
     ]},
     { id: 'taca', cat: 'Sobremesas na taça', tag: '250ml', items: [
       ['banoffee', 'Banoffee', 22, 'Farofa artesanal, doce de leite caseiro suave, banana, chantilly e canela.'],
@@ -28,33 +29,37 @@
     { id: 'brownie', cat: 'Brownie', items: [
       ['brsimples', 'Fatia de brownie simples', 14],
       ['brnut', 'Fatia de brownie com Nutella', 16],
-      ['brsorv', 'Fatia de brownie com sorvete', 22, 'Brownie, sorvete, cobertura de chocolate e um morango.']
+      ['brsorv', 'Fatia de brownie com sorvete', 24, 'Brownie, sorvete, cobertura de chocolate e um morango.']
     ]},
     { id: 'acai', cat: 'Açaí', items: [
-      ['acai', 'Açaí simples', 18],
-      ['acaifrutas', 'Açaí com duas frutas + granola', 22]
+      ['acai', 'Açaí puro', 20],
+      ['acaifrutas', 'Açaí com duas frutas + granola', 24]
     ]},
     { id: 'lanches', cat: 'Lanches e Salgados', items: [
       ['paoman', 'Pão com manteiga', 6],
       ['paoreq', 'Pão com requeijão', 6],
-      ['pdq', 'Pão de queijo', 8],
-      ['torrada', 'Torrada', 12, 'Opções: requeijão ou geleia de frutas vermelhas'],
-      ['croiss', 'Mini croissant (3 unidades)', 14, 'Sabores: queijo, presunto, requeijão ou Nutella'],
-      ['queijoq', 'Queijo quente', 14],
-      ['misto', 'Misto quente', 14],
-      ['tortafatia', 'Fatia de torta', 15],
-      ['bauru', 'Bauru', 16],
+      ['briochenut', 'Pão de brioche com Nutella', 12],
+      ['queijoq', 'Queijo quente', 16],
+      ['tortafatia', 'Fatia de torta', 16],
+      ['croiss', 'Mini croissant (3 unidades)', 16, 'Sabores: queijo, presunto, requeijão ou Nutella'],
+      ['misto', 'Misto quente', 16],
       ['esfiha', 'Mini esfiha (4 unidades)', 16],
       ['coxinha', 'Mini coxinha (4 unidades)', 16],
+      ['bauru', 'Bauru', 17],
+      ['tapqueijo', 'Tapioca de presunto e queijo', 16],
+      ['tapnut', 'Tapioca de Nutella e morango', 24],
+      ['omelete', 'Omelete', 24, 'Feito na hora, macio e bem recheado.'],
       ['brioche', 'Brioche Supreme', 24, 'Pão de brioche caseiro, recheado com mussarela, presunto, requeijão cremoso e um toque especial de mostarda Dijon.']
     ]},
     { id: 'bebidas', cat: 'Bebidas', items: [
-      ['coco', 'Água de coco', 5], ['agua', 'Água', 7], ['aguagas', 'Água com gás', 7], ['cha', 'Chá', 7],
-      ['refri', 'Refrigerante lata 350ml', 8],
-      ['coadop', 'Café coado pequeno', 5], ['coadog', 'Café coado grande', 8], ['coadoleite', 'Café coado com leite', 8], ['choco', 'Chocolate quente', 8],
+      ['coco', 'Água de coco', 6], ['agua', 'Água', 7], ['aguagas', 'Água com gás', 7], ['cha', 'Chá', 7],
+      ['refri', 'Refrigerante lata 350ml', 9], ['h2o', 'H2O', 9],
+      ['coadop', 'Café coado pequeno', 5], ['coadog', 'Café coado grande', 8], ['coadoleite', 'Café com leite', 9],
       ['expresso', 'Café expresso', 15, 'Acompanha água com gás e bolacha.'],
-      ['h2o', 'H2O', 10], ['suco', 'Suco de laranja', 12], ['uva', 'Suco de uva integral Aurora', 12],
-      ['soda', 'Soda Italiana', 14], ['vitamina', 'Vitamina', 14]
+      ['choco', 'Chocolate quente', 10], ['chocogelato', 'Chocolate Gelato', 10],
+      ['uva', 'Suco de uva integral Aurora', 12], ['suco', 'Suco de laranja', 14],
+      ['soda', 'Soda Italiana', 14], ['vitamina', 'Vitamina', 14], ['sucoacai', 'Suco de açaí', 16],
+      ['affogato', 'Affogato', 25, 'Sorvete de creme com uma dose de café expresso quente por cima.']
     ]}
   ];
   var SOON = ['Ciabatta de queijo e cogumelo', 'Ciabatta de salame, queijo e rúcula', 'Ciabatta de salpicão'];
